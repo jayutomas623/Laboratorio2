@@ -1,23 +1,23 @@
-import { TestBed } from '@angular/core/testing';
-import { App } from './app';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-describe('App', () => {
+import { Avatar } from './avatar';
+
+describe('Avatar', () => {
+  let component: Avatar;
+  let fixture: ComponentFixture<Avatar>;
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [App],
-    }).compileComponents();
-  });
+      imports: [Avatar]
+    })
+    .compileComponents();
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(App);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
-
-  it('should render title', async () => {
-    const fixture = TestBed.createComponent(App);
+    fixture = TestBed.createComponent(Avatar);
+    component = fixture.componentInstance;
     await fixture.whenStable();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, Tarea 2');
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
   });
 });
