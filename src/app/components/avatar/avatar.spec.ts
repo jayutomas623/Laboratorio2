@@ -1,6 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-// Cambiamos 'Avatar' por 'AvatarComponent'
 import { AvatarComponent } from './avatar'; 
 
 describe('AvatarComponent', () => {
@@ -9,7 +8,6 @@ describe('AvatarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      // Aquí también debe decir AvatarComponent
       imports: [AvatarComponent] 
     })
     .compileComponents();

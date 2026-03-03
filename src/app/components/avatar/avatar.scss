@@ -7,8 +7,10 @@
   .canvas-avatar {
     height: 350px;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 20px;
 
     .cuerpo {
       border-radius: 50%;
@@ -83,4 +85,20 @@
     label, p { font-weight: bold; font-size: 14px; }
     button { cursor: pointer; padding: 8px; border-radius: 5px; border: 1px solid #ccc; }
   }
+}
+
+
+@keyframes girarComoDisco {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+.girando {
+
+  animation: girarComoDisco 2s linear infinite; 
 }

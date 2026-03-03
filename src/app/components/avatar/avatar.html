@@ -2,14 +2,13 @@
   <h2>Avatar</h2>
   
   <div class="canvas-avatar">
+    <h3 class="nombre" [style.color]="colorFondo()">
+        {{ nombre() }}
+    </h3>
     <div class="cuerpo"
          [style.background-color]="colorFondo()"
          [style.width.px]="tamano()"
          [style.height.px]="tamano()">
-
-        <div class="nombre" [style.color]="colorTexto()">
-            {{ nombre() }}
-        </div>
 
       <div class="ojos">
         <div class="ojo"></div>
@@ -45,6 +44,10 @@
       Tamaño:
       <input type="range" min="100" max="300" [value]="tamano()" (input)="cambiarTamano($event)">
     </label>
+
+    <button (click)="toggleGiro()">
+      {{estaGirando() ? 'Detener giro 🛑' : 'Girar como disco 💿'}}
+    </button>
 
     <button (click)="toggleLentes()">
       {{tieneLentes() ? 'Quitar lentes' : 'Poner lentes'}}
